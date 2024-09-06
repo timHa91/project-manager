@@ -1,0 +1,5 @@
+com/tim/projectmanagement/controller/UserControllerUnitTest.class
+com/tim/projectmanagement/service/UserServiceTest.class
+com/tim/projectmanagement/ProjectManagmentApplicationTests.class
+com/tim/projectmanagement/service/JwtProviderTest.class
+com/tim/projectmanagement/controller/UserControllerIntegrationTest.class

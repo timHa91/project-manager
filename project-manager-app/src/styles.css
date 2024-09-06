@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --ranger-station: #292818;
+  --turtle-skin: #6F7A51;
+  --night-brown: #364022;
+  --breen: #442D1A;
+  --tanned-leather: #7B5A30;
+  --error-red: #C45C5C;
+}
+
+.alert-danger.bg-danger {
+  background-color: var(--error-red) !important;
+  border-color: var(--error-red);
+  color: #fff;
+}
+
+.btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+body {
+  background-color: var(--ranger-station);
+  color: var(--turtle-skin);
+}
+
+button {
+  background-color: var(--breen);
+  color: var(--tanned-leather);
+}
+
+.header {
+  border-bottom: 2px solid var(--night-brown);
+}
+
+.btn-custom {
+  background-color: var(--breen);
+  border-color: var(--breen);
+  color: #fff;
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+  background-color: var(--tanned-leather);
+  border-color: var(--tanned-leather);
+  color: #fff;
+}

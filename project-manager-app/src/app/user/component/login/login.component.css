@@ -1,0 +1,33 @@
+.login {
+  background-color: white;
+  position: relative;
+}
+
+.logo {
+  margin: auto;
+}
+
+.login-logo {
+  padding-left: 5vh;
+}
+
+.login-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+
+.form-floating > .bi {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+
+

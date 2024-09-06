@@ -1,0 +1,60 @@
+<div class="container-fluid vh-100 ">
+  <div class="row vh-100">
+    <div class="col-md-6 d-none d-md-block p-0 text-center logo">
+      <img src="assets/project-manager-logo/mobile-logo.png" class=" vh-80 w-80" alt="Login Image">
+    </div>
+
+    <!--Login Form-->
+    <div *ngIf="loginState$ | async as state" class="col-md-6 d-flex align-items-center justify-content-center p-0">
+      <div class="login w-100 vh-100 d-flex flex-column">
+        <div class="login-logo">
+          <img src="assets/project-manager-logo/wordmark-logo.png" class="logo-image" alt="Login Image">
+        </div>
+        <div class="login-content">
+          <div class="login-header">
+            <h5>Start your journey</h5>
+            <h2 class="mt-4 mb-5">Login to project manager</h2>
+          </div>
+          <div class="error-message">
+            <div *ngIf="state.errorMessage"
+                 class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show"
+                 role="alert">
+              {{ state.errorMessage }}
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                      aria-label="Close">
+              </button>
+            </div>
+          </div>
+          <div class="login-form">
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+              <div class="form-floating mb-4 ">
+                <input ngModel [disabled]="state.dataState === DataState.LOADING"
+                       type="email" name="email" id="email"
+                       class="form-control" placeholder="name@example.com" required>
+                <label for="email">E-mail</label>
+                <i class="bi bi-envelope position-absolute top-50 end-0 translate-middle-y me-3"></i>
+              </div>
+              <div class="form-floating mb-4 ">
+                <input ngModel [disabled]="state.dataState === DataState.LOADING"
+                       type="password" name="password" id="password"
+                       class="form-control" placeholder="Password" required>
+                <label for="password">Password</label>
+                <i class="bi bi-lock position-absolute top-50 end-0 translate-middle-y me-3"></i>
+              </div>
+              <div class="d-flex justify-content-center mb-4">
+                <button
+                  [disabled]="state.dataState === DataState.LOADING || loginForm.invalid || loginForm.pristine"
+                  type="submit" class="btn btn-custom">
+                      <span *ngIf="state.dataState === DataState.LOADING" class="spinner-border spinner-border-sm"
+                            role="status" aria-hidden="true" style="margin-right: 5px;"></span>
+                  <span *ngIf="state.dataState === DataState.LOADING">Loading...</span>
+                  <span *ngIf="!(state.dataState === DataState.LOADING)">Log in</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

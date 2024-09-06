@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: projectmanagement
+  datasource:
+    url: jdbc:mysql://localhost:3306/projectmanagement
+    username: root
+    password: thnbgmb3.1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  sql:
+    init:
+      mode: never
+      continue-on-error: false
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hartmannti56011@gmail.com
+    password: lgdk enju jqfz fmwd
+    properties:
+      mail:
+        smtp:
+          writetimeout: 5000
+          connectiontimeout: 5000
+          timeout: 5000
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+jwt:
+  secret: mysecret
+  access-token-expiration-time: 86400000
+  refresh-token-expiration-time: 3600000
+
+server:
+  error:
+    path: /user/error
+    whitelabel:
+      enabled: false
